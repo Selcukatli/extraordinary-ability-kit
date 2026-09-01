@@ -17,6 +17,31 @@ scripts/scaffold-case.sh <target-dir> [o1a|eb1a|both]
 Refuses to write into a non-empty directory. Creates `resources/` for raw material,
 one directory per petition type, `communications/`, and `case-overview.md`.
 
+## File evidence with the tool, not by hand
+
+```bash
+node scripts/add-evidence.mjs <case-dir> -c <criterion> -d "<description>" <file...>
+```
+
+Routes the file into the right `resources/` subfolder for that criterion, renames it off
+useless names like `Screenshot 2026-03-14 at 4.51.12 PM.png`, and appends a row to the
+correct criterion table with the path filled in — in one step.
+
+- `-u <url>` records something found but not yet captured, as `[ ] pending`
+- `-p <petition>` when the case has both `o1a/` and `eb1a/`
+- `-S <marker>` to set status explicitly (`x` `~` ` ` `!` `-`)
+- `--dry-run` to preview, `--move` to relocate rather than copy
+
+Criterion numbers map to folders **per petition type**, because the numbering diverges:
+O-1A criterion 7 is *critical role* → `company-docs/`; EB-1A criterion 7 is *artistic
+exhibitions* → `speaking/`. Pass `-p` when it matters.
+
+Write descriptions as an adjudicator would need them — what it is, who issued it, the
+year, and anything establishing selectivity. "Certificate" is useless six months later.
+
+The tool refuses to write if it detects escaped status markers in `evidence-list.md`,
+rather than compounding formatter damage.
+
 ## Layout
 
 ```

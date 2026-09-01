@@ -12,10 +12,19 @@ jobs:
         run: node scripts/validate-skills.mjs
       - name: Check for personal data
         run: node scripts/check-pii.mjs
-      - name: Scaffold a case and build a review packet
+      - name: Scaffold, ingest evidence, build a review packet
         run: |
           set -e
           ./skills/petition-workspace/scripts/scaffold-case.sh /tmp/case both
+          # O-1A must scaffold 8 criteria, EB-1A 10 — this is the bug the manifests exist to prevent
+          test "$(grep -c '^### Criterion' /tmp/case/o1a/evidence-list.md)" = 8
+          test "$(grep -c '^### Criterion' /tmp/case/eb1a/evidence-list.md)" = 10
+          printf 'x' > /tmp/f.png
+          # criterion 7 routes differently per petition type
+          node skills/petition-workspace/scripts/add-evidence.mjs /tmp/case -p o1a  -c 7 -d "Org chart" /tmp/f.png
+          node skills/petition-workspace/scripts/add-evidence.mjs /tmp/case -p eb1a -c 7 -d "Showcase demo" /tmp/f.png
+          test -d /tmp/case/resources/company-docs/org-chart
+          test -d /tmp/case/resources/speaking/showcase-demo
           node skills/petition-portal/scripts/build-portal.mjs /tmp/case -o /tmp/packet.html
           test -s /tmp/packet.html
       - name: Similarity check catches near-duplicate letters

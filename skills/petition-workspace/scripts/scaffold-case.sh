@@ -23,11 +23,42 @@ case "$TYPE" in
   both) petitions=(o1a eb1a) ;;
 esac
 
+# Criterion names per petition type. O-1A has 8; EB-1A has 10, and the numbering
+# diverges from criterion 7 onward — do not share one list between them.
+o1a_criteria=(
+  "Awards" "Membership" "Published Material" "Judging"
+  "Original Contributions" "Scholarly Articles" "Critical Role" "High Remuneration"
+)
+eb1a_criteria=(
+  "Awards" "Membership" "Published Material" "Judging"
+  "Original Contributions" "Scholarly Articles" "Exhibitions"
+  "Leading or Critical Role" "High Remuneration" "Commercial Success"
+)
+
 for p in "${petitions[@]}"; do
   dir="$TARGET/$p"
   mkdir -p "$dir/evidence-by-criterion" "$dir/recommendation-letters"
-  sed "s/^petition_type: o1a.*/petition_type: $p/" "$TPL/evidence-list.md" \
-    | sed "s/YYYY-MM-DD/$(date +%Y-%m-%d)/" > "$dir/evidence-list.md"
+
+  sed -e "s/PETITION_TYPE/$p/" -e "s/TODAY/$(date +%Y-%m-%d)/" \
+      "$TPL/evidence-list-header.md" > "$dir/evidence-list.md"
+
+  case "$p" in
+    o1a)  names=("${o1a_criteria[@]}") ;;
+    eb1a) names=("${eb1a_criteria[@]}") ;;
+  esac
+
+  n=1
+  for name in "${names[@]}"; do
+    {
+      printf '### Criterion %d: %s\n\n' "$n" "$name"
+      printf '| Exhibit # | Description | Status | Source |\n'
+      printf '|-----------|-------------|--------|--------|\n\n'
+    } >> "$dir/evidence-list.md"
+    printf '# Criterion %d: %s\n\nThe argument for this criterion: what the evidence is,\nwhy it satisfies the regulatory language, and why it matters to the field.\n' \
+      "$n" "$name" > "$dir/evidence-by-criterion/$(printf '%02d' $n)-$(echo "$name" | tr '[:upper:] ' '[:lower:]-').md"
+    n=$((n + 1))
+  done
+
   printf '# %s — Overview\n\nStrategy, criteria claimed, timeline, and open questions.\n' \
     "$(echo "$p" | tr '[:lower:]' '[:upper:]')" > "$dir/overview.md"
   printf '# %s — Petition Narrative\n\nDraft of the petition letter.\n' \
