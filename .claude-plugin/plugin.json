@@ -1,0 +1,8 @@
+{
+  "name": "extraordinary-ability-kit",
+  "version": "0.1.0",
+  "description": "Prepare your own U.S. O-1A or EB-1A extraordinary ability petition: assess the criteria, collect and organize evidence, draft the petition and recommendation letters, and generate a review packet for your attorney. Reference material, not legal advice.",
+  "author": { "name": "Selcuk Atli" },
+  "license": "MIT",
+  "keywords": ["o-1a", "eb-1a", "immigration", "uscis", "extraordinary-ability", "visa", "green-card"]
+}

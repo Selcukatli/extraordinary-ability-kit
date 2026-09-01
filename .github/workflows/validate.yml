@@ -1,0 +1,28 @@
+name: validate
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: npm install --no-audit --no-fund
+      - name: Validate skill frontmatter and criteria manifests
+        run: node scripts/validate-skills.mjs
+      - name: Check for personal data
+        run: node scripts/check-pii.mjs
+      - name: Scaffold a case and build a review packet
+        run: |
+          set -e
+          ./skills/petition-workspace/scripts/scaffold-case.sh /tmp/case both
+          node skills/petition-portal/scripts/build-portal.mjs /tmp/case -o /tmp/packet.html
+          test -s /tmp/packet.html
+      - name: Similarity check catches near-duplicate letters
+        run: |
+          mkdir -p /tmp/l
+          printf 'I am writing to offer my strongest support for the petition of the applicant here.\n' > /tmp/l/a.md
+          printf 'I am writing to offer my strongest support for the petition of the applicant here.\n' > /tmp/l/b.md
+          if node skills/petition-letters/scripts/similarity-check.mjs /tmp/l; then
+            echo "expected non-zero exit on duplicate letters"; exit 1
+          fi

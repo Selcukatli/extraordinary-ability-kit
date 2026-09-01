@@ -1,0 +1,16 @@
+{
+  "name": "extraordinary-ability-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent skills for preparing your own O-1A or EB-1A extraordinary ability petition.",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node scripts/validate-skills.mjs",
+    "check-pii": "node scripts/check-pii.mjs",
+    "test": "npm run validate && npm run check-pii"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0"
+  }
+}

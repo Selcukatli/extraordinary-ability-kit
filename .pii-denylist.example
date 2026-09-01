@@ -1,0 +1,10 @@
+# Case-specific terms the PII guard should reject.
+# Copy to `.pii-denylist` (gitignored) and add the real values — names, employers,
+# companies, universities, hometowns — so the guard can catch them without this
+# repo publishing the very list it protects.
+#
+# One term per line, case-insensitive substring match. Lines starting with # ignored.
+#
+# jane-doe
+# Doe
+# Acme Corporation

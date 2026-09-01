@@ -1,0 +1,140 @@
+# O-1A — Extraordinary ability in the sciences, education, business, or athletics
+# Skills MUST read this file rather than reciting a criteria list from memory.
+petition_type: o1a
+label: O-1A Nonimmigrant Visa
+form: I-129
+self_petition: false
+consultation_required: true   # written advisory opinion from a peer group
+standard: >-
+  A level of expertise indicating the person is one of the small percentage who
+  have arisen to the very top of the field of endeavor.
+statute: INA 101(a)(15)(O)(i); 8 U.S.C. 1101(a)(15)(O)(i)
+regulation: 8 CFR 214.2(o)
+policy_manual: USCIS Policy Manual Vol. 2, Part M
+criteria_citation: 8 CFR 214.2(o)(3)(iii)(B)
+criteria_required: 3
+criteria_total: 8
+
+one_time_achievement:
+  citation: 8 CFR 214.2(o)(3)(iii)(A)
+  description: >-
+    A major, internationally recognized award (e.g. Nobel Prize) satisfies the
+    evidentiary requirement outright; the criteria below are then unnecessary.
+
+comparable_evidence:
+  available: true
+  citation: 8 CFR 214.2(o)(3)(iv)
+  description: >-
+    If the listed criteria do not readily apply to the beneficiary's occupation,
+    comparable evidence may be submitted. The petition must explain WHY the
+    regular criteria do not apply before offering a substitute.
+
+# IMPORTANT: O-1A has EIGHT criteria. "Display of work at artistic exhibitions"
+# and "commercial success in the performing arts" are O-1B criteria and do NOT
+# appear here. Do not import them from the EB-1A manifest.
+criteria:
+  - id: 1
+    key: awards
+    name: Awards and prizes
+    text: >-
+      Receipt of nationally or internationally recognized prizes or awards for
+      excellence in the field of endeavor.
+    proves: The award is recognized beyond the local level and was competitively selected.
+    document: Selection criteria, competitor/nominee counts, prestige of grantor, past recipients.
+    fails_when: Internal company awards; pay-to-enter awards; no documented selection process.
+    note: >-
+      Team awards count where the beneficiary is individually acknowledged for
+      their contribution (Oct 2024 policy update).
+
+  - id: 2
+    key: membership
+    name: Membership in associations
+    text: >-
+      Membership in associations in the field for which classification is sought
+      which require outstanding achievements of their members, as judged by
+      recognized national or international experts in their disciplines or fields.
+    proves: Entry required outstanding achievement AND expert judgment of it.
+    document: Bylaws or published membership criteria, who reviews applicants and their credentials, acceptance rate.
+    fails_when: Membership by dues, degree, or open application. IEEE membership fails; IEEE Fellow passes.
+
+  - id: 3
+    key: published_material
+    name: Published material about the beneficiary
+    text: >-
+      Published material in professional or major trade publications or major
+      media about the beneficiary, relating to the beneficiary's work in the
+      field for which classification is sought, which shall include the title,
+      date, and author of such published material, and any necessary translation.
+    proves: Independent media substantially discussed their work.
+    document: Title, date, author (all three are regulatory), plus circulation/readership proving the outlet is major. Translations for non-English.
+    fails_when: Press releases; self-authored pieces (that is criterion 6); passing mentions; outlets with no evidence of reach.
+    note: >-
+      Oct 2024 update removed the requirement that coverage highlight the
+      beneficiary's INDIVIDUAL contributions. It need only substantially discuss
+      their work. This is materially easier than pre-2024 guidance.
+
+  - id: 4
+    key: judging
+    name: Judging the work of others
+    text: >-
+      Participation on a panel, or individually, as a judge of the work of others
+      in the same or in an allied field of specialization to that for which
+      classification is sought.
+    proves: Others in the field treat their expertise as authoritative.
+    document: The invitation itself, organizer confirmation letter, number of submissions judged, selectivity of the venue.
+    fails_when: Open-call volunteer reviewing; judging inside their own employer; informal favors.
+    note: >-
+      The most buildable criterion. An applicant short of three criteria should
+      invest here first — qualifying roles can be accumulated in months.
+
+  - id: 5
+    key: original_contributions
+    name: Original contributions of major significance
+    text: >-
+      Original scientific, scholarly, or business-related contributions of major
+      significance in the field.
+    proves: The FIELD changed, not just their employer.
+    document: Adoption by others, licensing or commercialization, citation context, independent expert letters explaining impact.
+    fails_when: Patents with no evidence of adoption; citation counts with no field baseline; only collaborator letters; incremental improvements.
+    note: >-
+      Hardest criterion and the most common RFE subject. In one AAO review, 24 of
+      39 decisions found it unmet. Frame as: what problem, who adopted it, what changed.
+
+  - id: 6
+    key: scholarly_articles
+    name: Authorship of scholarly articles
+    text: >-
+      Authorship of scholarly articles in the field, in professional journals, or
+      other major media.
+    proves: Peers publish and rely on their written work.
+    document: Publication list with venue prestige (impact factor, acceptance rate, ranking) and citation counts.
+    fails_when: Blog posts; self-published; predatory journals; abstracts alone.
+    note: Non-academics often route this through comparable evidence or skip it.
+
+  - id: 7
+    key: critical_role
+    name: Critical or essential capacity
+    text: >-
+      Employment in a critical or essential capacity for organizations and
+      establishments that have a distinguished reputation.
+    proves: TWO things — the role was essential, AND the organization is distinguished.
+    document: Org chart, scope of authority, outcomes tied to them specifically, plus objective proof of the org's standing (rankings, funding, revenue, market position, press).
+    fails_when: Title with no evidence of authority or outcomes; org whose distinction is asserted but never documented.
+    note: >-
+      O-1A says "critical or essential capacity" — broader than EB-1A's "leading
+      or critical role". She need not be an executive; she must be structurally
+      hard to replace.
+
+  - id: 8
+    key: high_remuneration
+    name: High salary or remuneration
+    text: >-
+      Has either commanded a high salary or will command a high salary or other
+      remuneration for services, evidenced by contracts or other reliable evidence.
+    proves: The market pays her far above peers at the same level and location.
+    document: W-2s, contracts, offer letters, equity; benchmarked against BLS OES, industry salary surveys, or the H-1B disclosure database. Target 90th percentile or better.
+    fails_when: Wrong benchmark tier or geography; salary asserted without third-party comparison data.
+    note: >-
+      O-1A ADVANTAGE over EB-1A — the regulation covers remuneration she "will
+      command", so a strong prospective U.S. offer letter qualifies. EB-1A counts
+      past earnings only.

@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+
+# Case-specific terms for the PII guard — never commit
+.pii-denylist
+
+# Local state
+.source-repo-baseline
+temp/
+*.tmp
+.DS_Store

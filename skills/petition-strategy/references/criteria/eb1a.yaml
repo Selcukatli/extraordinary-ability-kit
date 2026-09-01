@@ -1,0 +1,163 @@
+# EB-1A — Employment-based first preference, extraordinary ability
+# Skills MUST read this file rather than reciting a criteria list from memory.
+petition_type: eb1a
+label: EB-1A Immigrant Petition
+form: I-140
+self_petition: true
+consultation_required: false
+labor_certification_required: false
+job_offer_required: false
+standard: >-
+  A level of expertise indicating the individual is one of that small percentage
+  who have risen to the very top of the field of endeavor, demonstrated by
+  SUSTAINED national or international acclaim.
+statute: INA 203(b)(1)(A); 8 U.S.C. 1153(b)(1)(A)
+regulation: 8 CFR 204.5(h)
+policy_manual: USCIS Policy Manual Vol. 6, Part F, Ch. 2
+criteria_citation: 8 CFR 204.5(h)(3)(i)-(x)
+criteria_required: 3
+criteria_total: 10
+
+statutory_requirements:
+  - Extraordinary ability demonstrated by sustained national or international acclaim, with achievements recognized in the field.
+  - The person seeks to enter the U.S. to continue work in the area of extraordinary ability.
+  - The person's entry will substantially benefit the United States prospectively.
+
+one_time_achievement:
+  citation: 8 CFR 204.5(h)(3)
+  description: >-
+    A one-time achievement — a major, internationally recognized award — satisfies
+    the evidentiary requirement outright.
+
+comparable_evidence:
+  available: true
+  citation: 8 CFR 204.5(h)(4)
+  description: >-
+    If the listed criteria do not readily apply to the beneficiary's occupation,
+    comparable evidence may be submitted. Explain WHY the regular criteria do not
+    apply before offering a substitute.
+
+# Differences from O-1A that skills must respect:
+#   - Two extra criteria (7 display, 10 commercial success) that O-1A lacks.
+#   - Criterion 8 is "leading OR critical role"; O-1A says "critical or essential capacity".
+#   - Criterion 9 is PAST remuneration only; O-1A also counts prospective salary.
+#   - Higher evidentiary bar overall: "sustained" acclaim, lasting impact.
+criteria:
+  - id: 1
+    key: awards
+    name: Lesser nationally or internationally recognized awards
+    text: >-
+      Documentation of the alien's receipt of lesser nationally or internationally
+      recognized prizes or awards for excellence in the field of endeavor.
+    proves: Recognized beyond the local level, competitively selected.
+    document: Selection criteria, competitor counts, prestige of grantor, past recipients.
+    fails_when: Internal company awards; pay-to-enter; no documented selection process.
+    note: '"Lesser" distinguishes these from the one-time major award. Team awards count where individually acknowledged (Oct 2024).'
+
+  - id: 2
+    key: membership
+    name: Membership in associations requiring outstanding achievement
+    text: >-
+      Documentation of the alien's membership in associations in the field for
+      which classification is sought, which require outstanding achievements of
+      their members, as judged by recognized national or international experts in
+      their disciplines or fields.
+    proves: Entry required outstanding achievement AND expert judgment of it.
+    document: Bylaws or membership criteria, reviewer credentials, acceptance rate, notable members.
+    fails_when: Dues-based or degree-based membership; open enrollment.
+
+  - id: 3
+    key: published_material
+    name: Published material about the alien
+    text: >-
+      Published material about the alien in professional or major trade
+      publications or other major media, relating to the alien's work in the
+      field for which classification is sought. Such evidence shall include the
+      title, date, and author of the material, and any necessary translation.
+    proves: Independent media substantially discussed their work.
+    document: Title, date, author (regulatory), plus circulation/readership. Translations for non-English.
+    fails_when: Press releases; self-authored pieces; passing mentions; unproven outlets.
+    note: Oct 2024 update — must substantially discuss the work; need not highlight individual contributions.
+
+  - id: 4
+    key: judging
+    name: Judging the work of others
+    text: >-
+      Evidence of the alien's participation, either individually or on a panel, as
+      a judge of the work of others in the same or an allied field of
+      specialization for which classification is sought.
+    proves: The field treats their expertise as authoritative.
+    document: Invitation, organizer confirmation, submissions judged, venue selectivity.
+    fails_when: Open-call volunteering; internal review; informal favors.
+    note: Most buildable criterion — invest here first when short of three.
+
+  - id: 5
+    key: original_contributions
+    name: Original contributions of major significance
+    text: >-
+      Evidence of the alien's original scientific, scholarly, artistic, athletic,
+      or business-related contributions of major significance in the field.
+    proves: The field changed, not just their employer.
+    document: Adoption, licensing, commercialization, citation context, independent expert letters on impact.
+    fails_when: Patents without adoption evidence; bare citation counts; collaborator-only letters.
+    note: Hardest criterion, most RFE'd. 24 of 39 AAO decisions in one review found it unmet.
+
+  - id: 6
+    key: scholarly_articles
+    name: Authorship of scholarly articles
+    text: >-
+      Evidence of the alien's authorship of scholarly articles in the field, in
+      professional or major trade publications or other major media.
+    proves: Peers publish and rely on their written work.
+    document: Publication list, venue prestige, citation counts, h-index.
+    fails_when: Blogs; self-published; predatory journals; abstracts alone.
+
+  - id: 7
+    key: exhibitions
+    name: Display of work at artistic exhibitions or showcases
+    text: >-
+      Evidence of the display of the alien's work at artistic exhibitions or
+      showcases.
+    proves: Selective artistic venues chose to display the work.
+    document: Catalogs, invitations, venue prestige, reviews.
+    fails_when: Non-artistic showcases claimed as direct evidence.
+    applies_to: Primarily artistic fields.
+    note: >-
+      NOT an O-1A criterion. Oct 2024 clarified that non-artistic exhibitions
+      (tech demos, product showcases, conference presentations) qualify ONLY under
+      the comparable-evidence provision at 8 CFR 204.5(h)(4) — the petition must
+      first explain why the criterion does not readily apply to the field.
+
+  - id: 8
+    key: leading_role
+    name: Leading or critical role in distinguished organizations
+    text: >-
+      Evidence that the alien has performed in a leading or critical role for
+      organizations or establishments that have a distinguished reputation.
+    proves: TWO things — the role was leading or critical, AND the org is distinguished.
+    document: Org chart, authority, outcomes tied to them, plus objective proof of the org's standing.
+    fails_when: Title without evidence of authority or outcomes; undocumented org reputation.
+
+  - id: 9
+    key: high_remuneration
+    name: High salary or significantly high remuneration
+    text: >-
+      Evidence that the alien has commanded a high salary or other significantly
+      high remuneration for services, in relation to others in the field.
+    proves: The market paid them far above peers at the same level and location.
+    document: Tax returns, W-2s, contracts, equity; benchmarked to BLS OES or industry surveys. Target 90th percentile or better.
+    fails_when: Wrong benchmark tier or geography; no third-party comparison.
+    note: >-
+      PAST remuneration only ("has commanded"). Unlike O-1A, a prospective offer
+      letter does not satisfy this criterion on its own.
+
+  - id: 10
+    key: commercial_success
+    name: Commercial success in the performing arts
+    text: >-
+      Evidence of commercial successes in the performing arts, as shown by box
+      office receipts or record, cassette, compact disk, or video sales.
+    proves: Objective market success of performances or recordings.
+    document: Box office data, sales certifications, chart rankings, streaming statistics.
+    applies_to: Performing arts only.
+    note: NOT an O-1A criterion. Rarely applicable outside performing arts.
