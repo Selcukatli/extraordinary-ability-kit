@@ -105,13 +105,13 @@ At the bottom of evidence-list.md, the Collection Summary must always be reconci
 |------|---------|
 | Press article screenshot | `automation-review-kestrel-2024.png` |
 | Press article PDF | `folha-tecnologica-ferraz-profile-2023.pdf` |
-| Award certificate | `rensselaer-founders-award-2009.pdf` |
-| Product screenshot | `hypervideo-website.png` |
-| Podcast episode | `deconstructor-of-fun-social-gaming-2020.png` |
+| Award certificate | `meridian-grand-challenge-certificate-2023.pdf` |
+| Product screenshot | `kestrel-inspection-suite-product-page.png` |
+| Podcast episode | `factory-floor-podcast-vision-systems-2024.png` |
 | Conference speaking | `machine-perception-conf-keynote-2024.png` |
 | Translation | `translation-folha-tecnologica-profile.md` |
-| Company profile | `supercell-company-profile.md` |
-| Support letter | `dave-mcclure-letter.pdf` |
+| Company profile | `kestrel-robotics-company-profile.md` |
+| Support letter | `halvard-sten-letter.pdf` |
 
 ## Resources Folder Hierarchy
 
@@ -121,7 +121,7 @@ All raw evidence files go into `resources/`. Route files using these rules:
 |-------------|-------------|---------|
 | Press articles (English) | `resources/press/{company}/articles/` | Screenshots and PDFs of news articles, flat (one file per article) |
 | Podcast/video appearances | `resources/press/{company}/podcasts/{episode-name}/` | Per-episode folder: screenshot + transcript + translation grouped together |
-| Article translations | `resources/press/{company}/translations/` | English translations of Turkish article content (NOT podcast translations — those go in the episode folder) |
+| Article translations | `resources/press/{company}/translations/` | English translations of non-English article content (NOT podcast translations — those go in the episode folder) |
 | Awards (per award) | `resources/awards/{award-name}/` | Certificates, screenshots, announcement pages |
 | Memberships (per org) | `resources/memberships/{org-name}/` | Selection docs, program descriptions |
 | Judging (per event) | `resources/judging/{event-name}/` | Invitations, event pages, speaker bios |
@@ -140,7 +140,7 @@ All raw evidence files go into `resources/`. Route files using these rules:
 1. Is it about a press article, interview, or media appearance?
    - English article → `press/articles/`
    - Podcast or video interview → `press/podcasts/`
-   - Turkish content translation → `press/translations/`
+   - Non-English content translation → `press/translations/`
 2. Is it an award or recognition? → `awards/{award-name}/`
 3. Is it about membership in an organization? → `memberships/{org-name}/`
 4. Is it about judging, mentoring, or evaluating others? → `judging/{event-name}/`

@@ -53,9 +53,16 @@ for (const file of walk(root)) {
         hits.push({ rel, line: i + 1, kind: p.name, match: m });
       }
     }
-    for (const term of deny) {
-      if (line.toLowerCase().includes(term.toLowerCase()))
-        hits.push({ rel, line: i + 1, kind: "denylist term", match: term });
+    // Authorship is deliberate: the author's name in the license/manifest and the
+    // repo owner in install URLs. Everything else is a leak.
+    const isAuthorship =
+      /^(LICENSE|\.claude-plugin\/plugin\.json)$/.test(rel) ||
+      /github\.com\/|npx skills add |plugin install /.test(line);
+    if (!isAuthorship) {
+      for (const term of deny) {
+        if (line.toLowerCase().includes(term.toLowerCase()))
+          hits.push({ rel, line: i + 1, kind: "denylist term", match: term });
+      }
     }
   });
 }
