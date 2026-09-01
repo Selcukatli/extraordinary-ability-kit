@@ -1,5 +1,7 @@
-<!-- Consular annex. One file per post. Verify details against the post's own
-     website before relying on them — appointment systems and phone numbers change. -->
+<!-- WORKED EXAMPLE of the annex format — see README.md and TEMPLATE.md in this
+     directory. Its presence here reflects nothing about any applicant; it is simply
+     the post that was documented first. Verify every detail against the post's own
+     website before relying on it — appointment systems and phone numbers change. -->
 last-verified: 2026-02
 source: U.S. Embassy Ankara consular pages; NVC guidance
 

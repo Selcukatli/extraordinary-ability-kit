@@ -136,7 +136,28 @@ document.querySelectorAll('*').forEach(el => {
 });
 ```
 
+## Capture Obstacles by Type
+
+**Work from these first.** They cover most sites; the per-site notes that follow are
+worked examples contributed from real capture sessions, not a list you need to match.
+
+| Obstacle | What you see | Approach |
+|---|---|---|
+| **Cookie/consent wall** | EU banner overlaying content | Nuclear cleanup handles nearly all. Otherwise target `[id*="consent"]`, `[class*="cookie"]`, `[class*="gdpr"]`. |
+| **Metered paywall** | First N articles free, then a modal | Incognito first. Then Wayback Machine. Then the publisher's AMP or print URL if one exists. |
+| **Hard paywall** | Content never rendered to the DOM | Do not fight it. Capture the headline, byline, date, and lede, mark `[!] blocked`, and note it. A cited excerpt plus the citation is acceptable evidence. |
+| **Newsletter/subscribe modal** | Popup after a few seconds | Capture fast, or remove `[class*="modal"]`, `[class*="popup"]`, `[class*="overlay"]`. |
+| **Sticky headers/footers** | Bars follow the scroll and repeat down a full-page capture | Unstick fixed elements (snippet below) before a full-page shot. |
+| **Lazy-loaded images** | Blank boxes below the fold | Scroll to bottom, wait, then capture. shot-scraper: `--wait 3000` after a scroll script. |
+| **Infinite scroll** | Page never ends | Capture a viewport region or a CSS selector rather than full-page. |
+| **Restructured URLs** | Old link 404s | Search `site:domain.com <headline>`, or check the Wayback Machine for the original. |
+| **Non-English content** | Article not in English | Capture the original AND file a certified translation. USCIS requires translations for non-English evidence. |
+| **Dead domain** | Publication defunct | Wayback Machine. Note the capture date and the archive URL in the exhibit description. |
+
 ## Site-Specific Notes
+
+> Contributed examples, accumulated case by case. If a site you need is not here, use the
+> obstacle table above — and consider adding the site back to this list.
 
 ### Adweek (adweek.com)
 - **Cookie banner:** Yes, large GDPR banner. Nuclear cleanup handles it.
