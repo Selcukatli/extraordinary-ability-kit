@@ -36,9 +36,9 @@ collector agent:
 works with Codex, Claude Code, and other runtimes:
 
 ```bash
-npx skills add <org>/extraordinary-ability-kit --list
-npx skills add <org>/extraordinary-ability-kit --skill petition-strategy --agent claude-code
-npx skills add <org>/extraordinary-ability-kit --all --agent codex
+npx skills add Selcukatli/extraordinary-ability-kit --list
+npx skills add Selcukatli/extraordinary-ability-kit --skill petition-strategy --agent claude-code
+npx skills add Selcukatli/extraordinary-ability-kit --all --agent codex
 ```
 
 Skills are self-contained, so installing one on its own works. Slash commands are thin
@@ -209,8 +209,8 @@ the case:
 5. CI (`.github/workflows/validate.yml`) runs the same checks plus an end-to-end scaffold,
    packet build, and similarity-check assertion on every push and PR.
 
-To make it installable, push to GitHub and replace `<org>` in the install commands above
-with your org or username. `npx skills add <org>/extraordinary-ability-kit --list` reads
+To make it installable, push to GitHub and replace the owner in the install commands above
+with your own if you fork it. `npx skills add Selcukatli/extraordinary-ability-kit --list` reads
 directly from the default branch — no release or npm publish needed.
 
 ## Contributing
