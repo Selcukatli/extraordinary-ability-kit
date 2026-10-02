@@ -10,6 +10,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: Validate skill frontmatter and criteria manifests
         run: node scripts/validate-skills.mjs
+      - name: Workspace script tests
+        run: npm run test:workspace
       - name: Check for personal data
         run: node scripts/check-pii.mjs
       - name: Scaffold, ingest evidence, build a review packet

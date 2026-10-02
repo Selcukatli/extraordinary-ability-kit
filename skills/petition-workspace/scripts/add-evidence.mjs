@@ -132,10 +132,11 @@ if (dryRun) {
   process.exit(0);
 }
 
+// Check every destination before touching any, so a clash can't leave files filed without a row.
+for (const p of planned) if (existsSync(p.to)) die(`refusing to overwrite ${p.to}`);
 if (planned.length) {
   mkdirSync(destDir, { recursive: true });
   for (const p of planned) {
-    if (existsSync(p.to)) die(`refusing to overwrite ${p.to}`);
     if (move) renameSync(p.from, p.to); else copyFileSync(p.from, p.to);
   }
 }
