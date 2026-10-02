@@ -17,6 +17,19 @@ scripts/scaffold-case.sh <target-dir> [o1a|eb1a|both]
 Refuses to write into a non-empty directory. Creates `resources/` for raw material,
 one directory per petition type, `communications/`, and `case-overview.md`.
 
+## Add another petition workspace to an existing case
+
+```bash
+scripts/scaffold-case.sh --add <case-dir> <o1a|eb1a|both>
+```
+
+For a case that started as an O-1A and is now also pursuing an EB-1A (or the reverse).
+Writes only the new petition directory — `resources/`, `case-overview.md`, and any
+existing petition directory are left untouched. Refuses if the directory is not a case
+(no `case-overview.md`) or the petition directory already exists. Afterwards, update
+*Petition type(s)* in `case-overview.md`; the new workspace numbers its exhibits
+independently and draws on the same shared `resources/`.
+
 ## File evidence with the tool, not by hand
 
 ```bash

@@ -27,6 +27,8 @@ jobs:
           test -d /tmp/case/resources/speaking/showcase-demo
           node skills/petition-portal/scripts/build-portal.mjs /tmp/case -o /tmp/packet.html
           test -s /tmp/packet.html
+      - name: Add another petition workspace to an existing case
+        run: bash scripts/test-scaffold.sh
       - name: Similarity check catches near-duplicate letters
         run: |
           mkdir -p /tmp/l

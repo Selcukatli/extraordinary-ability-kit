@@ -60,7 +60,7 @@ wrappers over the skills; the logic lives in the skills themselves.
 
 | Command | |
 |---|---|
-| `/new-case <dir> [o1a\|eb1a\|both]` | Scaffold a case workspace |
+| `/new-case <dir> [o1a\|eb1a\|both]` | Scaffold a case workspace, or add another petition type to an existing one |
 | `/triage` | Interview-driven criteria feasibility assessment |
 | `/status` | Stage, blockers, and prioritized next actions |
 | `/add-evidence` | File a document and record it in one step |
