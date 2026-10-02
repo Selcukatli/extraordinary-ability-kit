@@ -7,7 +7,8 @@
   "scripts": {
     "validate": "node scripts/validate-skills.mjs",
     "check-pii": "node scripts/check-pii.mjs",
-    "test": "npm run validate && npm run check-pii"
+    "test": "npm run validate && npm run check-pii && npm run test-scaffold",
+    "test-scaffold": "bash scripts/test-scaffold.sh"
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",
